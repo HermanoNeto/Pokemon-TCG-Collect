@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pokémon TCG Collection Manager">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" type="image/x-icon" />
+    <style>
+        body {
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        img {
+            display: block;
+            margin: 2rem auto;
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            padding-bottom: 1rem;
+        }
+
+        .form-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        label, p {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 270px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            background-color: red;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 
+                background-color 0.2s ease,
+                transform 0.1s ease;
+}
+
+        button:hover {
+            background-color: red;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .user-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.8rem;
+            background: none;
+            color: black;
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/sets" class="header-form">
+        <button type="submit" class="user-btn" aria-label="User profile">
+            <i class="fas fa-user"></i>
+        </button>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pok%C3%A9mon_Trading_Card_Game_logo.svg/300px-Pok%C3%A9mon_Trading_Card_Game_logo.svg.png" 
+             alt="Pokémon Trading Card Game Logo"
+             loading="lazy">
+    </form>
+
+    <form method="POST">
+        <div class="form-container">
+            <label for="set_name">Set Name</label>
+            <select name="set_name" id="set_names" aria-required="true">
+                {%for i in sets%}
+                    <option value="{{i}}">{{i}}</option>
+                {%endfor%}
+            </select>
+
+            <label for="card_number">Set ID</label>
+            <input type="text" id="card_num" name="card_number" placeholder="ID">
+
+            <button type="submit" aria-label="Search cards">
+                Search
+            </button>
+        </div>
+    </form>
+</body>
+</html>
