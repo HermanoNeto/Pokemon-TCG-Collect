@@ -1,5 +1,7 @@
 # Pokemon-TCG-Collect
 
+- 🇺🇸 [English](README.en.md) 
+
 ## Funcionalidades
 
 - � Visualize informações detalhadas das cartas com dados do conjunto
@@ -27,22 +29,24 @@
    ```bash
    pip install flask requests
 
-3. Crie o diretório de recursos
+3. **Crie o diretório de recursos**
    ```bash
    mkdir resources
 
-4. Execute a aplicação
+4. **Execute a aplicação**
    ```bash
    python3 main.py
 
 ## Uso
-1. Inicie a aplicação
+1. **Inicie a aplicação**
    ```bash
    python3 main.py
 
-2. Acesse a interface web Abra http://localhost:5000 no seu navegador.
+2. **Acesse a interface web**
 
-      Guia da Interface:
+   Abra http://localhost:5000 no seu navegador.
+
+3. **Guia da Interface:**
     
      - Página Inicial: Selecione um conjunto e insira o ID da carta
      - Visualização de Carta: Veja os detalhes da carta e adicione à coleção
@@ -65,7 +69,7 @@
 
 ## API Reference
 
-Este projeto utiliza a API Pokémon TCG:
+**Este projeto utiliza a API Pokémon TCG:**
 
   - Endpoints de dados das cartas
   - Endpoints de informações dos conjuntos
